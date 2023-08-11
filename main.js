@@ -1,3 +1,5 @@
+// Pokemons
+
 var elPokemonList = document.querySelector(".pokemon-list");
 
 for (const pokemon of pokemons) {
@@ -39,4 +41,31 @@ for (const pokemon of pokemons) {
 
 
   elPokemonList.appendChild(elPokemonItem);
+}
+
+// Films
+var elFilmsList = document.querySelector(".films-list");
+
+for (const film of kinolar) {
+  var elFilmsItem = document.createElement("li");
+  var elFilmsTitle = document.createElement("h3");
+  var elFilmsYear = document.createElement("span");
+  var elFilmsCast = document.createElement("p");
+  var elFilmsGenre = document.createElement("span");
+  
+
+  elFilmsItem.classList.add("films-item");
+  elFilmsTitle.classList.add("text-danger", "mb-3");
+  elFilmsYear.classList.add("d-inline-block", "mb-3",  "p-1","text-white", "bg-success", "rounded");
+  elFilmsCast.classList.add("fw-bold", "fs-5", "mb-3");
+  elFilmsGenre.classList.add("text-danger");
+
+  elFilmsTitle.textContent = film.title;
+  elFilmsYear.textContent = `Year: ${film.year}`;
+  elFilmsCast.textContent = film.cast;
+  elFilmsGenre.textContent = `Genres: ${film.genres}`;
+
+
+  elFilmsItem.append(elFilmsTitle, elFilmsYear, elFilmsCast, elFilmsGenre);
+  elFilmsList.appendChild(elFilmsItem);
 }
